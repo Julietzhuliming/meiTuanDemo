@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class='container'>
+  <!--swiper  -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="996" height="275"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!--菜单 list  -->
+<view class="menu-list">
+  <view class="menu-item" wx:for="{{menuList}}" wx:key="menu+{{index}}">
+    <!--菜单图片  -->
+    <image class="item-img" src="{{item.imgPath}}" width="132" height="138"></image>
+    <!--菜单文字  -->
+    <text class="item-desc" >{{item.text}}</text>
+  </view>
+</view>
+
+<!--推荐 list  -->
+<view class="tuijian-list">
+  <view class="tuijian-item"  wx:for="{{tuijianList}}" wx:key="tuijian+{{index}}">
+    <!--推荐 item 背景图  -->
+    <image class="tuijian-bg" src="{{item.bg}}" width="500" height="340"></image>
+    <!--推荐 tag 标签  -->
+    <view class='tuijian-tagbg'>
+      <image class="tagbg" src="{{item.tagbg}}" width="200" height="54"></image>
+      <text class="tuijian-tag">{{item.tag}}</text>
+    </view>
+    <!--推荐标题  -->
+    <text class="tuijian-title">{{item.title}}</text>
+    <!--推荐描述  -->
+    <text class="tuijian-desc">{{item.desc}}</text>
+    <!--推荐美食图  -->
+    <image class="tuijian-meishi" src="{{item.meishi}}"></image>
+  </view>
+</view>
+<!--猜你喜欢  -->
+<view class="guess-like">
+  <view class="guess-you">{{guessLike}}</view> 
+</view>
+<!--喜欢列表  -->
+<view class="guesslike-list">
+  <view class="like-item"  wx:for="{{guesslikeList}}" wx:key="like+{{index}}">
+    <image class="like_img" src="{{item.img}}" width="108" height="108"></image>
+    <text class="like_title">{{item.title}}</text>
+    <text class="like_distance">{{item.distance}}</text>
+    <text class="like_desc">{{item.desc}}</text>
+    <text class="like_price">¥{{item.price}}起</text>
+    <text class="like_link">{{item.link}}</text>
+  </view>
+</view>
